@@ -18,7 +18,7 @@
 <body>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-                <a class="navbar-brand" style="width: 600px;" href="#">
+                <a class="navbar-brand" style="width: 600px;" href="index.html">
                     <img src="assets/images/logof.png" width="10%">
                     
                     <img src="assets/images/logowofb.png" alt="" width="13%">
@@ -65,10 +65,52 @@
         
                 </div>
             </nav>
-
-
-     
     </div>
+ 
+ 
+    <div class="row">
+        <div class="input-group col-md-4 mx-2 my-4">
+            <div class="input-group-append">
+                <span class="input-group-text" >$</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Amount to Trade">
+        </div>
+        <div class="input-group col-md-4 mx-2 my-4">
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Amount or percentage">
+            <div class="input-group-append">
+                <button class="btn btn-secondary  dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stop Loss</button>
+                <div class="dropdown-menu ">
+                    <a class="dropdown-item" href="#">$</a>
+                    <a class="dropdown-item" href="#">%</a>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-success col-md-2 mx-4 my-4">Start</button>
+
+    </div>
+
+ 
+
+    <footer style="background-color: darkgrey;  ">
+
+         
+        <ul id="ulfooter">
+                <li id="lets">
+                    <a href="#">Contact us &nbsp;&nbsp;</a>
+                </li>
+                <li id="lets">
+                    <a href="#">Support &nbsp;&nbsp;</a>
+                </li>
+                <li id="lets">
+                    <a href="#">Our Team</a>
+                </li>
+            </ul>
+        
+    
+        </footer>
+ 
+ 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -81,12 +123,12 @@
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyAdj2Coo5eHzElm9E8tUXy4EmGjwcUW8Xc",
-    authDomain: "cryptobot-f16e1.firebaseapp.com",
-    databaseURL: "https://cryptobot-f16e1.firebaseio.com",
-    projectId: "cryptobot-f16e1",
-    storageBucket: "cryptobot-f16e1.appspot.com",
-    messagingSenderId: "962630257643"
+    apiKey: "AIzaSyB_gHsrrFKG_qgTUzD6w7Ybuqbfw0ayH8I",
+    authDomain: "cryptobot-firebase.firebaseapp.com",
+    databaseURL: "https://cryptobot-firebase.firebaseio.com",
+    projectId: "cryptobot-firebase",
+    storageBucket: "cryptobot-firebase.appspot.com",
+    messagingSenderId: "447326953953"
   };
   firebase.initializeApp(config);
 
@@ -104,13 +146,14 @@
                 console.log(user);
                 document.getElementById('profile').innerHTML = JSON.stringify(user, null, 2);
                 document.getElementById('logout').onclick = function () {
+                    console.log("what");
                     if (confirm('Logout?')) {
                         firebase.auth().signOut(); // This will trigger onAuthStateChanged again, immediately.
                     }
                 };
             } else {
                 // if not logged in yet
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
 
             }
         });
@@ -120,3 +163,16 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
